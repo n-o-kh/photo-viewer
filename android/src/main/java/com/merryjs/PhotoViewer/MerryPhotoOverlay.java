@@ -106,7 +106,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
         tvShare.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendShareIntent();
+                imageViewer.onSave();
             }
         });
         tvClose = (TextView) view.findViewById(R.id.btnClose);
