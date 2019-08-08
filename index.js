@@ -84,6 +84,7 @@ MerryPhotoView.propTypes = {
     hideShareButton: PropTypes.bool,
     onDismiss: PropTypes.func.isRequired,
     onChange: PropTypes.func,
+    onSave: PropTypes.func,
     shareText: PropTypes.string,
     ...View.propTypes
 };
