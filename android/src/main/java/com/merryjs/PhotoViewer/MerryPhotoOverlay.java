@@ -89,11 +89,10 @@ public class MerryPhotoOverlay extends RelativeLayout {
     }
 
     private void sendShareIntent() {
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, sharingText);
-        sendIntent.setType("text/plain");
-        getContext().startActivity(sendIntent);
+        final Context context = getContext();
+        if (context instanceof ReactContext) {
+            ((ReactContext) context).getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "onSave", null);
+        }
     }
 
     private void init() {
